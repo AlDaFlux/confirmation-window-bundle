@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class ConfirmationWindowBundleExtension extends Extension
+class AldafluxConfirmationWindowExtension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -22,10 +22,12 @@ class ConfirmationWindowBundleExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
+    
+        
         $container->setParameter( 'confirmation_window.test', $config[ 'test' ] );
 
         
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.yml');
+//        $loader->load('services.yml');
     }
 }
