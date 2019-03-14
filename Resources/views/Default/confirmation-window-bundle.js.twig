@@ -1,0 +1,33 @@
+$(document).ready(function() 
+{
+ 
+{%  for custom in confirmation_window_customs %}
+     $(".{{ custom.class}}").click(function(){
+            $('#sak_modal_before_{{ custom.class}}').modal('show');        
+            $('#sak_valid_{{ custom.class}}').data("sak_valid",$(this).attr("href"));
+            return false ;
+  }); 
+{%  endfor  %}
+
+{%  for custom in confirmation_window_alerts %}
+     $(".{{ custom.class}}").click(function(){
+            $('#confirmation_window_alert_{{ custom.class}}').modal('show');        
+            return false ;
+  }); 
+{%  endfor  %}
+
+
+
+    $('.delete_before_box').click(function() {
+            $('#sak_modal_text_before').html($(this).data('invite'));
+            $('#sak_valid').data("sak_valid",$(this).attr("href"));
+            $('#sak_modal_before').modal('show');        
+            return false ;
+    });
+    
+    $(".sak_valid").click(function() 
+    {
+        window.location.href = $(this).data('sak_valid');
+    });
+   
+});

@@ -19,8 +19,34 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('confirmation_window');
+        $rootNode->children()->scalarNode( 'template' )->defaultValue('bootstrap4')->end();
+        $rootNode->children()->scalarNode( 'delete' )->end();
+        
+        $rootNode->children()
+            ->arrayNode('customs')
+                ->prototype('array')
+                    ->children()
+                         ->scalarNode('class')->end()
+                         ->scalarNode('title')->end()
+                         ->scalarNode('content')->end()
+                         ->scalarNode('button')->end()
+                    ->end()
+            ->end()
+        ->end();
+        
+        $rootNode->children()
+            ->arrayNode('alerts')
+                ->prototype('array')
+                    ->children()
+                         ->scalarNode('class')->end()
+                         ->scalarNode('title')->end()
+                         ->scalarNode('content')->end()
+                         ->scalarNode('button')->end()
+                    ->end()
+            ->end()
+        ->end();
+                
 
-        $rootNode->children()->scalarNode( 'test' )->end();
 
         return $treeBuilder;
     }

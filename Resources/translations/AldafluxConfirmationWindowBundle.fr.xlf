@@ -38,6 +38,14 @@
                 <source>delete_modal.close</source>
                 <target>Fermer</target>
             </trans-unit>
+            <trans-unit id="show.valid">
+                <source>show.valid</source>
+                <target>OK</target>
+            </trans-unit>
+            <trans-unit id="show.title">
+                <source>show.title</source>
+                <target>Message</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

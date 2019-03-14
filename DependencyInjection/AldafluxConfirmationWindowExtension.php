@@ -21,13 +21,14 @@ class AldafluxConfirmationWindowExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
-
-    
         
-        $container->setParameter( 'confirmation_window.test', $config[ 'test' ] );
-
+        $container->setParameter( 'confirmation_window.delete', $config[ 'delete' ] );
+        $container->setParameter( 'confirmation_window.customs', $config[ 'customs' ] );
+        $container->setParameter( 'confirmation_window.template', $config[ 'template' ] );
+        $container->setParameter( 'confirmation_window.alerts', $config[ 'alerts' ] );
+        
         
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-//        $loader->load('services.yml');
+        $loader->load('services.yml');
     }
 }

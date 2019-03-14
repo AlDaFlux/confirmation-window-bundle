@@ -12,7 +12,21 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('AldafluxConfirmationWindowBundle:Default:index.html.twig');
+        return $this->render('AldafluxConfirmationWindow/Default/index.html.twig');
     }
+    
+    /**
+     * @Route("/confirmation-window-bundle.js" , name="confirmation-window-bundle.js")
+     */
+    public function jsAction()
+    {
+        
+        $customs=$this->getParameter('confirmation_window.customs');
+
+        return $this->render('@AldafluxConfirmationWindow/Default/confirmation-window-bundle.js.twig', ['customs'=>$customs]);
+        
+    }
+    
+    
 }
 
