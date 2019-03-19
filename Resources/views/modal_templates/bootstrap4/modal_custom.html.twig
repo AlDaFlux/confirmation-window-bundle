@@ -1,22 +1,36 @@
 
-{%  for custom in confirmation_window_customs %}
-<div class="modal" id="sak_modal_before_{{ custom.class}}"  tabindex="-1" role="dialog">
+{%  for  key, custom  in confirmation_window_customs %}
+<div class="modal" id="confirmation_window_custom_{{ key}}"  tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header bg-danger">
-              <h5 class="modal-title" id="sak_modal_text_before">{{ custom.title }}</h5>
+            <div class="modal-header bg-{{custom.class}}">
+                <h5 class="modal-title"  id='confirmation_window_custom_{{key}}_title'>
+                  {% if custom.title is defined %}
+                      {{ custom.title }}
+                  {% endif %}
+                </h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
       <div class="modal-body ">
-           <p id='sak_modal_text_before_{{ custom.class}}'>
-                        {{ custom.content}}
+
+            <p id='confirmation_window_custom_{{key}}_content'>
+                  {% if custom.content is defined %}
+                      {{ custom.content }}
+                  {% endif %}
             </p>
       </div>
       <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">{{ "delete_modal.close" | trans({},'AldafluxConfirmationWindowBundle') }}</button>
-            <button type="button"  class="sak_valid btn btn-danger"  id="sak_valid_{{ custom.class}}">{{ custom.button}}</button>
+
+          <button type="button" class="btn btn-default" data-dismiss="modal">{{ "delete_modal.close" | trans({},'AldafluxConfirmationWindowBundle') }}</button>
+            <button class="confirmation_window_valid  btn btn-{{custom.class}}" id="confirmation_window_custom_valid_{{ key}}" type="button"   data-dismiss="modal">
+                {% if custom.button is defined %}
+                      {{ custom.button }}
+                {% else %}
+                        {{ "show.valid" | trans({},'AldafluxConfirmationWindowBundle') }}
+                {% endif %}
+        </button>                  
       </div>
     </div>
   </div>

@@ -1,33 +1,112 @@
 $(document).ready(function() 
 {
- 
-{%  for custom in confirmation_window_customs %}
-     $(".{{ custom.class}}").click(function(){
-            $('#sak_modal_before_{{ custom.class}}').modal('show');        
-            $('#sak_valid_{{ custom.class}}').data("sak_valid",$(this).attr("href"));
-            return false ;
-  }); 
-{%  endfor  %}
+    {%  for key, custom in confirmation_window_customs %}
+         $("{{ custom.selector}}").click(function(){
+                if (typeof  $(this).data("box-content") !== 'undefined')
+                {
+                   $('#confirmation_window_custom_{{key}}_content').html($(this).data("box-content"));     
+                }
+                else
+                {
+                    {% if custom.content is defined %}
+                        $('#confirmation_window_custom_{{key}}_content').html("{{ custom.content }}");     
+                    {% else %}
+                        $('#confirmation_window_custom_{{key}}_content').html("");
+                    {% endif %}
+                }
+                if (typeof  $(this).data("box-title") !== 'undefined')
+                {
+                    $('#confirmation_window_custom_{{key}}_title').html($(this).data("box-title"));     
+                }
+                else
+                {
+                    {% if custom.content is defined %}
+                        $('#confirmation_window_custom_{{key}}_title').html("{{ custom.title }}");     
+                    {% else %}
+                        $('#confirmation_window_custom_{{key}}_title').html("");
+                    {% endif %}
+                }
+            
+                $('#confirmation_window_custom_{{key}}').modal('show');        
+                $('#confirmation_window_custom_valid_{{ key}}').data("confirmation_window_valid",$(this).attr("href"));
+                return false ;
+      }); 
+    {%  endfor  %}
+    
+    
+    {%  for key, custom in confirmation_window_alerts %}
+         $("{{ custom.selector}}").click(function(){
+                if (typeof  $(this).data("box-content") !== 'undefined')
+                {
+                    $('#confirmation_window_{{key}}_content').html($(this).data("box-content"));     
+                }
+                else
+                {
+                    {% if custom.content is defined %}
+                        $('#confirmation_window_{{key}}_content').html("{{ custom.content }}");     
+                    {% else %}
+                        $('#confirmation_window_{{key}}_content').html("");
+                    {% endif %}
+                }
+                if (typeof  $(this).data("box-title") !== 'undefined')
+                {
+                    $('#confirmation_window_{{key}}_title').html($(this).data("box-title"));     
+                }
+                else
+                {
+                    {% if custom.content is defined %}
+                        $('#confirmation_window_{{key}}_title').html("{{ custom.title }}");     
+                    {% else %}
+                        $('#confirmation_window_{{key}}_title').html("");
+                    {% endif %}
+                }
+                $('#confirmation_window_alert_{{key}}').modal('show');        
+                return false ;
+      }); 
+      
+    {%  endfor  %}
+    
+    
+    
+    
+    $('.delete_before_box').click(function()
+    {
 
-{%  for custom in confirmation_window_alerts %}
-     $(".{{ custom.class}}").click(function(){
-            $('#confirmation_window_alert_{{ custom.class}}').modal('show');        
-            return false ;
-  }); 
-{%  endfor  %}
-
-
-
-    $('.delete_before_box').click(function() {
-            $('#sak_modal_text_before').html($(this).data('invite'));
-            $('#sak_valid').data("sak_valid",$(this).attr("href"));
-            $('#sak_modal_before').modal('show');        
+                if (typeof  $(this).data("box-content") !== 'undefined')
+                {
+                   $('#confirmation_window_delete_content').html($(this).data("box-content"));     
+                }
+                else
+                {
+                    {% if custom.content is defined %}
+                        $('#confirmation_window_delete_content').html("{{ custom.content }}");     
+                    {% else %}
+                        $('#confirmation_window_delete_content').html("{{ "delete_modal.title" | trans({},'AldafluxConfirmationWindowBundle') }}");
+                    {% endif %}
+                }
+                
+                if (typeof  $(this).data("box-title") !== 'undefined')
+                {
+                    $('#confirmation_window_delete_title').html($(this).data("box-title"));     
+                }
+                else
+                {
+                    {% if custom.content is defined %}
+                        $('#confirmation_window_delete_title').html("{{ custom.title }}");     
+                    {% else %}
+                        $('#confirmation_window_delete_title').html("{{ "delete_modal.action" | trans({},'AldafluxConfirmationWindowBundle') }}");
+                    {% endif %}
+                }
+            
+    
+            $('#confirmation_window_delete_valid').data("confirmation_window_valid",$(this).attr("href"));
+            $('#confirmation_window_delete').modal('show');        
             return false ;
     });
     
-    $(".sak_valid").click(function() 
+    
+    $(".confirmation_window_valid").click(function() 
     {
-        window.location.href = $(this).data('sak_valid');
+        window.location.href = $(this).data('confirmation_window_valid');
     });
-   
 });
