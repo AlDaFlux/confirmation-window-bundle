@@ -1,10 +1,12 @@
-Have a confirmation window before link
-
 # confirmation-window-bundle
 
-aldaflux_confirmation_window.yaml
+Have a confirmation window before link
 
-~~
+
+
+## aldaflux_confirmation_window.yaml
+
+```
 
 aldaflux_confirmation_window:
     template: bootstrap4
@@ -24,9 +26,8 @@ aldaflux_confirmation_window:
             title: "*************?"
             button: " Go !! Go !! Go"
     
-~~
+```
 
 
 
 
-OK99999

@@ -20,7 +20,8 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('confirmation_window');
         $rootNode->children()->scalarNode( 'template' )->defaultValue('bootstrap4')->end();
-        $rootNode->children()->scalarNode( 'delete' )->end();
+        $rootNode->children()->scalarNode( 'delete' )->defaultValue('false')->end();
+
         
         $rootNode->children()
             ->arrayNode('customs')
