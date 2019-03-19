@@ -23,3 +23,4 @@ aldaflux_confirmation_window:
             title: "*************?"
             button: " Go !! Go !! Go !! Go !!"
     
+----
