@@ -4,6 +4,7 @@ Have a confirmation window before link
 
 aldaflux_confirmation_window.yaml
 
+~~
 
 aldaflux_confirmation_window:
     template: bootstrap4
@@ -21,6 +22,11 @@ aldaflux_confirmation_window:
         alert:
             selector: ".message"
             title: "*************?"
-            button: " Go !! Go !! Go !! Go !!"
+            button: " Go !! Go !! Go"
     
-----
+~~
+
+
+
+
+OK99999

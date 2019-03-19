@@ -8,8 +8,7 @@
             "php": ">=5.3.2",
             "symfony/framework-bundle": ">=3.0",
 	    "twig/twig": "*",
-            "doctrine/doctrine-bundle": "*",
-                "aldaflux/confirmation-window-bundle": "dev-master"
+            "doctrine/doctrine-bundle": "*"
         },
         "autoload": {
             "psr-4": { "Aldaflux\\ConfirmationWindowBundle\\": "" }
