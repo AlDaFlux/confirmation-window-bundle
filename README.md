@@ -52,5 +52,30 @@ aldaflux_confirmation_window:
 ```
 
 
+## template
+```
+        {% block javascripts %}
+           <script src="{{ path("confirmation-window-bundle.js") }}" ></script>
+        {% endblock %}
+
+        {% include("@AldafluxConfirmationWindow/confirmation-window-bundle.html.twig") %}
+
+```
+
+## routing 
+
+```
+aldaflux_confirmation_window:
+    resource: '@AldafluxConfirmationWindowBundle/Controller/DefaultController.php'
+    prefix: /confirmation_window
+    type: annotation
+
+```
+
+        
+        
+
+
+
 
 
