@@ -2,14 +2,14 @@
 
 Have a confirmation window before link
 
-#Install : 
+## Install : 
 
 ```
 composer require aldaflux/confirmation-window-bundle
 ```
 
 
-# Synfony 3.*
+## Synfony 3.*
 
 ```
 new Aldaflux\ConfirmationWindowBundle\AldafluxConfirmationWindowBundle(),
