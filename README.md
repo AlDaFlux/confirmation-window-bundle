@@ -2,6 +2,29 @@
 
 Have a confirmation window before link
 
+#Install : 
+
+```
+composer require aldaflux/confirmation-window-bundle
+```
+
+
+# Synfony 3.*
+
+```
+new Aldaflux\ConfirmationWindowBundle\AldafluxConfirmationWindowBundle(),
+```
+
+
+```
+services:
+    Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface: '@assetic.parameter_bag'
+    twig.extension.confirmation:
+        autowire: true
+        class: Aldaflux\ConfirmationWindowBundle\Twig\CWExtension
+        arguments:
+            $params: "@assetic.parameter_bag"
+```
 
 
 ## aldaflux_confirmation_window.yaml
