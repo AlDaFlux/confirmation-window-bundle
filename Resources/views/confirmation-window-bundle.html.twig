@@ -1,0 +1,10 @@
+
+{% include("@AldafluxConfirmationWindow/modal_templates/" ~ confirmation_window_template ~'/modal_custom.html.twig' ) %}
+
+{% include("@AldafluxConfirmationWindow/modal_templates/" ~ confirmation_window_template ~'/modal_alerts.html.twig' ) %}
+
+{%  if confirmation_window_template %}
+    {% include("@AldafluxConfirmationWindow/modal_templates/" ~ confirmation_window_template ~'/modal_delete.html.twig' ) %}
+{%  endif  %}
+
+ 

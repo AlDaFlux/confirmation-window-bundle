@@ -1,0 +1,9 @@
+services:
+    confirmation_window.twig_extension:
+        class: Aldaflux\ConfirmationWindowBundle\Twig\CWExtension
+        public: false
+        autowire: true
+        autoconfigure: true
+        tags:
+            - { name: twig.extension }
+        

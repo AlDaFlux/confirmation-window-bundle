@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+    <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <!-- labels -->
+            <trans-unit id="label.true">
+                <source>label.true</source>
+                <target>Oui</target>
+            </trans-unit>
+            <trans-unit id="label.false">
+                <source>label.false</source>
+                <target>Non</target>
+            </trans-unit>
+            <trans-unit id="label.empty">
+                <source>label.empty</source>
+                <target>Vide</target>
+            </trans-unit>
+            <trans-unit id="label.null">
+                <source>label.null</source>
+                <target>Aucun(e)</target>
+            </trans-unit>
+              
+
+            <!-- misc. elements -->
+            <trans-unit id="delete_modal.title">
+                <source>delete_modal.title</source>
+                <target>Voulez-vous supprimer cet élément ?</target>
+            </trans-unit>
+            <trans-unit id="delete_modal.content">
+                <source>delete_modal.content</source>
+                <target>Cette action est irréversible.</target>
+            </trans-unit>
+            <trans-unit id="delete_modal.action">
+                <source>delete_modal.action</source>
+                <target>Supprimer</target>
+            </trans-unit>
+            <trans-unit id="delete_modal.close">
+                <source>delete_modal.close</source>
+                <target>Fermer</target>
+            </trans-unit>
+            <trans-unit id="show.valid">
+                <source>show.valid</source>
+                <target>OK</target>
+            </trans-unit>
+            <trans-unit id="show.title">
+                <source>show.title</source>
+                <target>Message</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
